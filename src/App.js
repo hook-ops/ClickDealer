@@ -71,9 +71,9 @@ function App() {
               {/* Add other routes as needed */}
             </Routes>
           </Content>
-          <div style={{ marginTop: 'auto', padding: '830px 0 0 1400px', position : 'fixed' }}>
+          {/* <div style={{ marginTop: 'auto', padding: '830px 0 0 1400px', position : 'fixed' }}>
             <SocialLinks />
-          </div>
+          </div> */}
         </Layout>
       </Layout>
     </Router>
