@@ -1,0 +1,19 @@
+.report-page {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.filter-form {
+  margin-bottom: 20px;
+}
+
+.ant-table {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}

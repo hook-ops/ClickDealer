@@ -1,0 +1,38 @@
+.custom-sidebar {
+  background-color: #2059b6; /* Matches the main sidebar color */
+}
+
+.custom-sidebar .ant-menu-item,
+.custom-sidebar .ant-menu-submenu-title {
+  color: #ffffff; /* Text color */
+}
+
+.custom-sidebar .ant-menu-item-active,
+.custom-sidebar .ant-menu-item-selected {
+  background-color: #0f60b6; /* Active item background */
+}
+
+.custom-sidebar .ant-menu-submenu {
+  background-color: #2266be; /* Submenu background */
+}
+
+/* Ensure sub-menu items match the parent sidebar color */
+.ant-menu-submenu-popup,
+.ant-menu-submenu-title {
+    background-color: #004987; /* Replace with your desired color */
+}
+
+.ant-menu-item {
+    background-color: transparent; /* Ensure items are transparent */
+}
+
+.ant-menu-item-active, .ant-menu-item-selected {
+    background-color: #0069c0; /* Highlight color for selected items */
+}
+
+.ant-menu-submenu {
+  background-color: #2266be !important; /* Replace with your desired color */
+}
+.custom-submenu .ant-menu {
+  background-color: #387fdd !important; /* Replace with the color you want */
+}

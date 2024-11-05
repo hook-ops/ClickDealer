@@ -1,0 +1,60 @@
+.browse-page {
+    background-color: #f8f9fb; /* Light background */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .browse-page h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1d2b3a; /* Darker blue for heading */
+  }
+  
+  .ant-input {
+    border-radius: 4px;
+  }
+  
+  .ant-btn {
+    border-radius: 4px;
+  }
+  
+  .ant-table {
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .ant-table th {
+    background-color: #e6f7ff; /* Light blue header */
+    color: #1d2b3a;
+    font-weight: bold;
+  }
+  
+  .ant-table-thead > tr > th {
+    text-align: center;
+  }
+  
+  .ant-table-tbody > tr > td {
+    text-align: center;
+  }
+  
+  .ant-table-tbody > tr:hover {
+    background-color: #f1f5ff; /* Slight hover effect */
+  }
+  
+  .ant-pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  
+  .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+  
+  .ant-btn:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  

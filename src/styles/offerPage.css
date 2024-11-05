@@ -1,0 +1,11 @@
+.offer-page {
+    background-color: #f0f2f5;
+    padding: 20px;
+  }
+  
+  .filter-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
