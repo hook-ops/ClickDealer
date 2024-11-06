@@ -8,19 +8,19 @@ const { Title, Paragraph } = Typography;
 
 const LandingPage = () => {
   return (
-    <Layout className="landing-layout">
+    <Layout className="landing">
       <Header className="landing-header">
         <div className="logo">
           <img src="/path-to-logo.png" alt="Logo" style={{ height: '50px' }} />
         </div>
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} className="landing-menu">
-          <Menu.Item key="1">Advertisers</Menu.Item>
-          <Menu.Item key="2">Affiliates</Menu.Item>
-          <Menu.Item key="3">Smartlink</Menu.Item>
-          <Menu.Item key="4">E-Commerce</Menu.Item>
-          <Menu.Item key="5">Leadgen</Menu.Item>
-          <Menu.Item key="6">Company</Menu.Item>
-          <Menu.Item key="7">Media</Menu.Item>
+          <Menu.Item key="1">Home</Menu.Item>
+          <Menu.Item key="2">Services</Menu.Item>
+          <Menu.Item key="3">Blog</Menu.Item>
+          <Menu.Item key="4">Contact</Menu.Item>
+          <Menu.Item key="5">Legal Pages</Menu.Item>
+          <Menu.Item key="6">Advertisers</Menu.Item>
+          <Menu.Item key="7">Publishers</Menu.Item>
         </Menu>
         <div className="auth-buttons">
           <Button type="text" className="login-button"><Link to="/login">Login</Link></Button>
