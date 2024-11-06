@@ -1,0 +1,54 @@
+/* General page styling */
+.login-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+  }
+  
+  /* Login form container */
+  .login-form-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Title styling */
+  .login-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Input field styling */
+  .ant-form-item-label > label {
+    color: #555;
+  }
+  
+  .ant-input,
+  .ant-input-password {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Button styling */
+  .login-button {
+    width: 100%;
+    background-color: #1d2671;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #c33764;
+  }
+  

@@ -1,0 +1,64 @@
+.landing-layout {
+    background-color: #0b0f1a; /* Dark blue background */
+  }
+  
+  .landing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c2c4c; /* Darker blue for header */
+  }
+  
+  .landing-menu {
+    flex-grow: 1;
+    border-bottom: none;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .login-button {
+    color: #ffffff;
+  }
+  
+  .signup-button {
+    background-color: #68a4ff;
+    border-color: #68a4ff;
+  }
+  
+  .hero-section {
+    text-align: center;
+    padding: 100px 0;
+    color: #ffffff;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    color: #ffffff;
+  }
+  
+  .hero-subtitle {
+    font-size: 20px;
+    color: #a8c8ff;
+  }
+  
+  .info-cards {
+    padding: 50px;
+  }
+  
+  .info-card {
+    background-color: #1c2c4c;
+    border: none;
+    color: #ffffff;
+  }
+  
+  .info-card .ant-card-body {
+    color: #ffffff;
+  }
+  
+  .info-card .ant-btn-link {
+    color: #68a4ff;
+  }
+  

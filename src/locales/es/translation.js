@@ -1,7 +1,6 @@
-{
-    "welcome": "Bienvenido al Tablero de Clicker Volt",
-    "currentBalance": "Saldo Actual",
-    "payoutReport": "Informe de Pagos"
-    // Add more translations as needed
-  }
-  
+export default {
+    "Dashboard": "Dashboard",
+    "currentBalance": "Current Balance",
+    "payoutReport": "Payout Report"
+    // Add the rest of your translations here
+};
