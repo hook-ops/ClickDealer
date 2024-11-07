@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Form, Input, Button, Select, Checkbox, Radio, message, Modal } from 'antd';
 import '../styles/SignUpPage.css';
 import axios from 'axios';
-// import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 const { Option } = Select;
@@ -20,28 +19,28 @@ const SignUpPage = () => {
     axios.post('http://localhost:5000/api/auth/signup', values)
       .then(response => {
         console.log(response.data);
-
         message.success('Signup successful!');
-        setIsSuccessModalVisible(true);  // Show the modal
-        // Redirect to the login page after a successful signup
-        // setTimeout(() => {
-        //   navigate('/login'); // Adjust the path if necessary
-        // }, 2000); // Delay to let the user see the success message
+        setIsSuccessModalVisible(true);
       })
       .catch(error => {
-        if (error.response && error.response.status === 400 && error.response.data.message === 'Email already exists') {
-            // Show popup if the email already exists
+        if (error.response) {
+          if (error.response.status === 400 && error.response.data.message === 'Email already exists') {
             setModalMessage('The email is already registered. Please use a different email.');
-            setIsErrorModalVisible(true);
           } else {
-            console.error('There was an error!', error);
+            setModalMessage(error.response.data.message || 'An unexpected error occurred.');
           }
+        } else {
+          setModalMessage('There was an error connecting to the server. Please try again later.');
+        }
+        setIsErrorModalVisible(true);
+        console.error('There was an error!', error);
       });
+      
   };
 
   const handleSuccessOk = () => {
     setIsSuccessModalVisible(false);
-    navigate('/login');  // Redirect to login page
+    navigate('/login');
   };
 
   const handleErrorCancel = () => {
@@ -54,12 +53,20 @@ const SignUpPage = () => {
         <h2>Welcome to Sign Up</h2>
 
         <Form onFinish={onFinish} layout="vertical">
+          {/* Account Type Selection */}
+          <Form.Item label="Account Type" name="accountType" rules={[{ required: true, message: 'Please select an account type!' }]}>
+            <Radio.Group>
+              <Radio value="advertiser">Advertiser/Agency</Radio>
+              <Radio value="affiliate">Affiliate/Publisher</Radio>
+            </Radio.Group>
+          </Form.Item>
+
           {/* Basic Info */}
           <Form.Item label="Account Name" name="accountName" rules={[{ required: true, message: 'Please input your account name!' }]}>
             <Input />
           </Form.Item>
-          <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Please input your account name!' }]}>
-            <Input />
+          <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
+            <Input.Password />
           </Form.Item>
           <Form.Item label="First Name" name="firstName" rules={[{ required: true, message: 'Please input your first name!' }]}>
             <Input />
@@ -73,6 +80,7 @@ const SignUpPage = () => {
           <Form.Item label="Phone Number" name="phone" rules={[{ required: true, message: 'Please input your phone number!' }]}>
             <Input />
           </Form.Item>
+
 
           {/* About You */}
           <Form.Item label="Country" name="country" rules={[{ required: true, message: 'Please select your country!' }]}>
@@ -89,8 +97,10 @@ const SignUpPage = () => {
             <Input />
           </Form.Item>
 
-          {/* Traffic Info */}
-          <Form.Item label="Specialization" name="specialization" rules={[{ required: true, message: 'Please select your specialization!' }]}>
+
+
+           {/* Traffic Info */}
+           <Form.Item label="Specialization" name="specialization" rules={[{ required: true, message: 'Please select your specialization!' }]}>
             <Radio.Group>
               <Radio value="blogger">Blogger/Fan Page Owner</Radio>
               <Radio value="affiliate">Affiliate/Media Buyer</Radio>
@@ -101,6 +111,7 @@ const SignUpPage = () => {
             <Checkbox.Group options={['Education', 'Gaming', 'Finance', 'Travel']} />
           </Form.Item>
 
+
           {/* Submit Button */}
           <div className="form-wrapper">
             <Button type="primary" htmlType="submit">
@@ -108,6 +119,7 @@ const SignUpPage = () => {
             </Button>
           </div>
         </Form>
+
         {/* Modal for error messages */}
         <Modal
           title="Alert"
@@ -119,7 +131,6 @@ const SignUpPage = () => {
           <p>{modalMessage}</p>
         </Modal>
 
-
         {/* Modal for successful signup */}
         <Modal
           title="Signup Successful"
@@ -129,19 +140,6 @@ const SignUpPage = () => {
           okText="Go to Login"
           cancelText="Stay Here"
           centered
-        //   bodyStyle={{
-        //     backgroundImage: 'linear-gradient(135deg, #3b41c5, #d24872)',  // Match this color to your page background
-        //     color: '#ffffff',  // Text color
-        //     borderRadius: '8px',
-        //     padding: 0,
-        //   }}
-        //   style={{
-        //     backgroundImage: 'linear-gradient(135deg, #3b41c5, #d24872)',  // Make the modal overlay transparent
-        //     boxShadow: 'none',
-        //   }}
-        //   maskStyle={{
-        //     backgroundImage: 'linear-gradient(135deg, #3b41c5, #d24872)', // Match overlay to background
-        //   }}
         >
           <p style={{ padding: '16px' }}>Your account has been created successfully. You can now log in.</p>
         </Modal>

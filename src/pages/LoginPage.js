@@ -12,19 +12,28 @@ const LoginPage = () => {
   const onFinish = async (values) => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', values);
+      
+      // Extract the token from the response
+      const { token } = response.data;
+  
+      // Store the token in localStorage
+      localStorage.setItem('token', token);
+  
       message.success('Login successful!');
+  
       // Redirect to the dashboard or another page
       navigate('/dashboard'); // Adjust the path if necessary
     } catch (error) {
       // Check if it's a known error from the backend
       if (error.response && error.response.data.message) {
-        setModalMessage(error.response.data.message); // Set the error message from the response
+        setModalMessage(error.response.data.message); // Set the error message from backend
       } else {
         setModalMessage('An unexpected error occurred. Please try again.');
       }
       setIsModalVisible(true); // Show the modal
     }
   };
+  
 
   const handleModalOk = () => {
     setIsModalVisible(false);

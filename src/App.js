@@ -23,7 +23,9 @@ import './styles/dashboard.css';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import LandingPage from './components/LandingPage';
+import CreateOfferPage from './pages/CreateOfferPage';
 import { Layout } from 'antd';
+import AcceptOfferPage from './pages/AcceptOfferPage';
 
 const { Sider, Content } = Layout;
 
@@ -59,6 +61,9 @@ function App() {
                       <Route path="/offers/PendingCampaigns" element={<PendingCampaignsPage />} />
                       <Route path="/offers/RecentlyViewed" element={<RecentlyViewedPage />} />
                       <Route path="/offers/Rotations" element={<RotationsPage />} />
+                      <Route path="/offers/post-offer" element={<CreateOfferPage />} />
+
+                      <Route path="/offers/pending-applications" element={<AcceptOfferPage />} />
                       <Route path="/reports/global" element={<GlobalReportPage />} />
                       <Route path="/loyalty" element={<LoyaltyPage />} />
                       <Route path="/promotions" element={<PromotionPage />} />

@@ -1,9 +1,9 @@
 .landing {
-    background-color: #66aae9; /* Dark blue background */
+    background-color: #163047; /* Dark blue background */
     height: 100%;
   }
   body{
-    background-color: #66aae9;
+    background-color:#163047;
   }
   .landing-header {
     display: flex;
@@ -52,7 +52,7 @@
   }
   
   .info-card {
-    background-color: #1c2c4c;
+    background-color: #b7c3db;
     border: none;
     color: #ffffff;
   }
